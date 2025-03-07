@@ -1,0 +1,18 @@
+docker run -it -d -p 8080:80 nginx 
+// Executa ngnix e -p(publica a porta 80 do docker para 8080 da minha maquina ) do modulo -d(sem travar o terminal)
+
+docker run --name nomeGnix nginx => --name usado para atribuir um nome ao container
+
+docker exec -it nginx bash=> Para ter acesso dentro dos meus container devo executar o exec  e -it para que fique
+activo o terminal de forma interativa.
+
+docker exec -it nginx ls => Para visualizar os arquivos do container
+
+
+docker rm containerName => remove o container
+docker rm containerName -f => força a remoção do container em execução
+
+sudo docker run -d --name nginx -p 8080:80 --mount type=bind,source="$(pwd)"/htm
+l,target=/usr/share/nginx/html nginx
+
+
