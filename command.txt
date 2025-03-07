@@ -15,4 +15,6 @@ docker rm containerName -f => força a remoção do container em execução
 sudo docker run -d --name nginx -p 8080:80 --mount type=bind,source="$(pwd)"/htm
 l,target=/usr/share/nginx/html nginx
 
+=> aponta o projeto local para a pasta do nginx do container, o pwd é o caminho da pasta atual no local
+
 
