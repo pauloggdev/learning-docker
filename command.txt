@@ -14,7 +14,22 @@ docker rm containerName -f => força a remoção do container em execução
 
 sudo docker run -d --name nginx -p 8080:80 --mount type=bind,source="$(pwd)"/htm
 l,target=/usr/share/nginx/html nginx
+=> usado para rodar projeto local apontando para a pasta do projeto no container
+pwd aponta para pasta atual no local
 
-=> aponta o projeto local para a pasta do nginx do container, o pwd é o caminho da pasta atual no local
+sudo docker volume create meuVolume => comando usado para criar volume
+
+sudo docker run -d --name nginx -p 8080:80 --mount type=bind,source=meuVolume,target=/usr/share/nginx/html nginx
+=> aqui o source apontei pelo meu volume criado
+
+sudo docker volume prune => comando usado para remover todos volumes
+
+docker system prune -a => comando usado para remover todos espaços ocupado pelo container docker
+
+docker rmi php:latest => comando usado para remover imagens docker
+
+
+sudo docker build -t paulojoao13/nginx-com-vim . => comando usado para criar a minha propria imagem
+apartir do file Dockerfile nome do meu user do docker, nome da imagem o ponto representa a pasta atual
 
 
